@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- This is the Header/Navigation of the website -->
+    <header>
+        <h1>Welcome to the Website</h1>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Form.html">Form</a></li>
+                <li><a href="Display and Positioning.html">Display and Positioning</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--This is the Main Content of the website -->
+    <main>
+        <section class="intro">
+            <h2>Discover CSS concepts</h2>
+            <p>I am designing this website to demonstrate various CSS techniques and layouts.</p>
+        </section>
+
+        <section class="features">
+            <h2>Our Features</h2>
+            <ul>
+                <li>High-quality products</li>
+                <li>Excellent customer service</li>
+                <li>Fast delivery</li>
+            </ul>
+        </section>
+
+        <section class="Selection">
+            <h2>Types of Selectors</h2>
+            <ul>
+                <li><strong>Element Selectors</strong> - Select elements by their tag name.<br>
+                    p { font-size: 16px; }</li>
+                <li><strong>Class Selectors</strong> - Select elements by their class attribute.<br>
+                    .my-class { background-color: yellow; }</li>
+                <li><strong>ID Selectors</strong> - Select a single element by its ID attribute.<br>
+                    #my-id { border: 1px solid black; }</li>
+                <li><strong>Attribute Selectors</strong> - Select elements by their attributes.<br>
+                    [href] { color: red; }</li>
+                <li><strong>Pseudo-class Selectors</strong> - Select elements based on their state or position.<br>
+                    a:hover { color: green; }</li>
+                <li><strong>Pseudo-element Selectors</strong> - Select elements based on their position in the document.<br>
+                    p::first-line { font-weight: bold; }</li>
+            </ul>
+        </section>
+        <section class="Selection">
+            <h2>Combinators</h2>
+            <ul>
+                <li><strong>Selectors</strong>  - Select all elements on the page.<br>
+                    * { margin: 0; padding: 0; }</li>
+                <li><strong>Group Selectors</strong> - Select multiple elements with the same styles.<br>
+                    h1, h2, h3 { color: blue; }</li>
+                <li><strong>Chaining Selectors</strong> - Combine multiple selectors to target specific elements.<br>
+                    div.my-class { background-color: lightgray; }</li>
+                <li><strong>Descendant Selectors</strong> - Select elements that are descendants of a specified element.<br>
+                    div p { color: gray; }</li>
+                <li><strong>Child Selectors</strong> - Select elements that are direct children of a specified element.<br>
+                    ul > li { list-style-type: square; }</li>
+                <li><strong>Adjacent Sibling Selectors</strong> - Select elements that are immediately adjacent to a specified element.<br>
+                    h2 + p { margin-top: 0; }</li>
+                <li><strong>General Sibling Selectors</strong> - Select elements that are siblings of a specified element.<br>
+                    h2 ~ p { color: purple; }</li>
+                <li><strong>Attribute Value Selectors</strong> - Select elements based on specific attribute values.<br>
+                    input[type="text"] { border: 1px solid blue; }</li>
+            </ul></section>
+        <section class="Box Model">
+            <h2>Box Model</h2>
+            <p>The CSS box model describes the rectangular boxes generated for elements in the document tree and the layout of these boxes. It consists of four components: content, padding, border, and margin.</p>
+            <ul>
+                <li><strong>Content</strong> - The innermost part of the box where text and images appear.</li>
+                <li><strong>Padding</strong> - The space between the content and the border. It can be used to create space around the content.</li>
+                <li><strong>Border</strong> - The line that surrounds the padding and content. It can be styled with different widths, colors, and patterns.</li>
+                <li><strong>Margin</strong> - The outermost part of the box that creates space between the element and other elements on the page.</li>
+            </ul>
+            <p>Understanding the box model is crucial for designing layouts and controlling the spacing of elements
+            on a webpage.</p>
+            <h3>border-box</h3>
+            <p>When using the border-box model, the width and height of an element include the content, padding, and border. This means that if you set an element's width to 200px and it has 20px of padding and a 2px border, the total width of the element will still be 200px. The content area will be reduced to accommodate the padding and border.</p>
+        </section>
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions or would like to learn more about our services, please don't hesitate to contact us.</p>
+            <a href="Contact.html" class="contact-button">Contact Us</a>
+        </section>
+    </main>
+
+    <!--This is the Footer of the website -->
+    <footer>
+        <p>&copy; 2024 Our Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
