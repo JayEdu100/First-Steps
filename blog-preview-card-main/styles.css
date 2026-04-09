@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* TOKENS */
+:root {
+  
+/* Colors */
+  --Yellow: hsl(47, 88%, 63%);
+  --White: hsl(0, 0%, 100%);
+  --Gray-500: hsl(0, 0%, 42%);
+  --Gray-950: hsl(0, 0%, 7%);
+/* Scale */
+    --Space-50: 8px;
+    --Space-100: 16px;
+    --Space-200: 20px;
+    --Space-300: 24px;
+    --Space-400: 32px;
+    --Space-500: 40px;
+
+    --Radius--small: 5px;
+    --Radius--medium: 10px;
+    --Radius--large: 20px;
+
+/* Typography */
+    --font-family-base: 'Figtree', sans-serif;   
+
+    --Font-Size-Base: 16px;
+    --Font-Size-Small: 14px;
+    --Font-Size-Large: 20px;
+    --Font-Size-XLarge: 24px;
+    --Font-Weight-Regular: 500;
+    --Font-Weight-Bold: 800;
+
+}
+
+/* BASE */
+body {
+  font-family: var(--font-family-base);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  
+  min-height: 100vh;
+  background-color: var(--Yellow);
+}
+
+.text-heading {
+  font-size: var(--Font-Size-XLarge);
+  font-weight: var(--Font-Weight-Bold);
+  color: var(--Gray-950);
+}
+.text-body {
+  font-size: var(--Font-Size-Base);
+  font-weight: var(--Font-Weight-Regular);
+  color: var(--Gray-500);
+}
+
+.text-span {
+  font-size: var(--Font-Size-Small);
+  font-weight: var(--Font-Weight-Regular);
+  color: var(--Gray-950);
+}
+
+.text-span-bold {
+    font-size: var(--Font-Size-Small);
+    font-weight: var(--Font-Weight-Bold);
+    color: var(--Gray-950);
+}
+
+.card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    
+    margin: auto;
+    max-width: 336px;
+    width: 100%;
+    gap: var(--Space-200);
+    padding: var(--Space-200);
+
+    border: 1px solid var(--Gray-950);
+    border-radius: var(--Radius--large);
+    box-shadow: var(--Space-50) var(--Space-50) 0 0 var(--Gray-950) ;
+}
+
+.illustration {
+    width: 100%;
+    border-radius: var(--Radius--medium);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: var(--Space-100);
+}
+
+.status {
+    padding: var(--Space-50) var(--Space-100);
+    background-color: var(--Yellow);
+    border-radius: var(--Radius--small);
+}
+
+.author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--Space-100);
+}
