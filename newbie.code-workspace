@@ -5,9 +5,12 @@
 		},
 		{
 			"path": "../Codecademy "
+		},
+		{
+			"path": "../qr-code-component-main"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Codecademy "
+		"liveServer.settings.multiRootWorkspaceName": "qr-code-component-main"
 	}
 }
