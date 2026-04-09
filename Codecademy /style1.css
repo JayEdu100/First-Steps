@@ -1,0 +1,76 @@
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    width: 50%;
+    max-width: 500px;
+    margin: 100px auto;
+
+}
+
+h2 {
+    width: 100%;
+    padding-bottom: 16px;
+    font-size: 32px;
+    font-family: inter, sans-serif;
+    line-height: 150%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], input[type="password"], button[type="submit"] {
+    height: 44px;
+    border-radius: 5px;
+    padding: 10px;
+}
+button{
+    background-color: cadetblue;
+    color: white;
+    font-size: 16px;
+}
+
+
+form a {
+    color: cadetblue;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: left;
+}
+
+p {
+    font-size: 16px;
+    font-family: inter, sans-serif;
+    color: cadetblue;
+}
+.gateways {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+}
+img {
+    border: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+    color: cadetblue;
+    font-size: 16px;
+    text-decoration: underline;
+    text-align: right;
+}
+
+span {
+    font-weight: 900;
+}
+
