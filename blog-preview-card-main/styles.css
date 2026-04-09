@@ -89,9 +89,16 @@ body {
     gap: var(--Space-200);
     padding: var(--Space-200);
 
+    background-color: var(--White);
     border: 1px solid var(--Gray-950);
     border-radius: var(--Radius--large);
     box-shadow: var(--Space-50) var(--Space-50) 0 0 var(--Gray-950) ;
+
+    transition: box-shadow 0.6s ease;
+}
+
+.card:hover {
+    box-shadow: var(--Space-100) var(--Space-100) 0 0 var(--Gray-950) ;
 }
 
 .illustration {
