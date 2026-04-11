@@ -1,0 +1,185 @@
+/*
+========================================
+INPUT COMPONENT — MENTAL MODEL
+========================================
+
+STRUCTURE
+---------
+.input                → container (component)
+.input__wrapper       → positioning context (for floating label)
+.input__label         → label element
+.input__field         → input element
+.input__message       → helper / error text
+
+MODIFIERS (VARIANTS)
+--------------------
+.input--error         → error state
+.input--floating      → floating label behavior
+
+STATES
+------
+:focus-visible        → focus interaction (keyboard + click)
+:hover                → hover feedback
+:disabled             → disabled state
+
+KEY PRINCIPLES
+--------------
+1. Parent controls child state
+   → .input--error .input__field
+
+2. Elements use __ (structure)
+   → .input__field
+
+3. Modifiers use -- (state/variant)
+   → .input--error
+
+4. Layout belongs to container
+   → flex + gap
+
+5. Input state drives UI
+   → :focus, :placeholder-shown
+
+FLOATING LABEL LOGIC
+--------------------
+input:focus + label
+→ move label up
+
+input:not(:placeholder-shown)
+→ keep label floated when value exists
+
++ selector → selects NEXT sibling
+
+TRANSFORM
+---------
+translateY(-50%) → move label upward
+scale(0.85)      → shrink label
+
+========================================
+*/
+
+
+/* =========================
+   BASE
+========================= */
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+}
+
+.input__label {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+}
+
+.input__field {
+    width: 100%;
+    padding: var(--spacing-100);
+
+    border: 1px solid var(--color-gray);
+    border-radius: var(--radius-medium);
+
+    font-size: var(--font-size-base);
+
+    outline: none;
+
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input__message {
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+
+/* =========================
+   STATES
+========================= */
+
+.input__field:focus-visible {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px hsla(220, 90%, 56%, 0.2);
+    /* focus ring for accessibility */
+}
+
+.input__field:hover:not(:disabled):not(:focus) {
+    border-color: hsl(0, 0%, 70%);
+    /* subtle hover feedback */
+}
+
+.input__field:disabled {
+    background: var(--color-gray);
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   ERROR STATE (PARENT → CHILD)
+========================= */
+
+.input--error .input__field {
+    border-color: red;
+}
+
+.input--error .input__message {
+    display: block;
+}
+
+.input--error .input__label {
+    color: red;
+}
+
+
+/* =========================
+   FLOATING VARIANT
+========================= */
+
+.input--floating .input__wrapper {
+    position: relative;
+    /* creates positioning context for label */
+}
+
+.input--floating .input__field {
+    padding: 16px 12px;
+}
+
+.input--floating .input__label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+    /* vertically center label */
+
+    background: white;
+    padding: 0 4px;
+
+    font-size: 14px;
+    color: var(--color-gray);
+
+    pointer-events: none;
+    /* allows clicks to pass through label to input */
+
+    transition: all 0.2s ease;
+}
+
+
+/* FLOATING BEHAVIOR */
+
+.input--floating .input__field:focus + .input__label,
+.input--floating .input__field:not(:placeholder-shown) + .input__label {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    /* move up + shrink label */
+
+    color: var(--color-primary);
+}
+
+
+/* EXTRA: focus border consistency */
+
+.input--floating .input__field:focus {
+    border-color: var(--color-primary);
+}

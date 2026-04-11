@@ -1,0 +1,199 @@
+/*
+========================================
+BUTTON COMPONENT — MENTAL MODEL
+========================================
+
+STRUCTURE
+---------
+.button              → base component (container)
+.button__icon        → icon element (optional)
+.button__label       → text element
+
+MODIFIERS (VARIANTS)
+--------------------
+.button--variant-*   → visual style (primary, secondary)
+.button--size-*      → size (small, large)
+.button--icon-only   → only icon, no text
+.button--icon-right  → icon placed on right
+
+STATES
+------
+:hover               → hover interaction (lift)
+:active              → pressed state
+:focus-visible       → keyboard focus ring
+:disabled            → disabled state
+
+COMPOUND VARIANTS
+-----------------
+Multiple modifiers combined
+→ .button--variant-primary.button--size-large
+
+KEY PRINCIPLES
+--------------
+1. Base defines structure
+2. Variants override variables (not direct styles)
+3. Parent controls layout
+4. State modifies behavior
+5. Compound handles edge cases
+
+LAYOUT MODEL
+------------
+Flexbox + gap
+→ spacing handled by container, not children
+
+ICON SYSTEM
+-----------
+Icons scale with text using em units
+
+========================================
+*/
+
+
+/* =========================
+   BASE
+========================= */
+
+.button {
+    /* Layout */
+    display: inline-flex; /* keeps button inline but allows flex layout */
+    align-items: center;  /* vertical alignment of icon + text */
+    justify-content: center;
+
+    /* Box Model */
+    gap: var(--spacing-100); /* spacing between icon and label */
+    padding: var(--spacing-100) var(--spacing-200);
+
+    /* Component-level variables (scoped) */
+    --btn-bg: var(--color-gray);   /* default background */
+    --btn-color: var(--color-black); /* default text */
+
+    /* Appearance */
+    background: var(--btn-bg); /* uses variable → allows variants */
+    color: var(--btn-color);
+    border-radius: var(--radius-medium);
+    border: 1px solid transparent; /* prevents layout shift if border added later */
+
+    /* Typography */
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    
+    /* Interaction */
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease; /* smooth hover/press or all */
+}
+
+
+/* =========================
+   VARIANTS
+========================= */
+
+.button--variant-primary {
+    --btn-bg: var(--color-primary);
+    --btn-color: var(--color-white);
+}
+
+.button--variant-primary:hover:not(:disabled):not(:active) {
+    /* hover only when NOT disabled and NOT active */
+    --btn-bg: var(--color-primary-hover);
+}
+
+.button--variant-secondary {
+    --btn-bg: var(--color-gray);
+    --btn-color: var(--color-black);
+}
+
+.button--variant-secondary:hover {
+    --btn-bg: hsl(0, 0%, 80%);
+}
+
+
+/* =========================
+   SIZES
+========================= */
+
+.button--size-small {
+    padding: var(--spacing-100) var(--spacing-200);
+    font-size: 14px;
+}
+
+.button--size-large {
+    padding: var(--spacing-200) var(--spacing-200);
+    font-size: 18px;
+}
+
+
+/* =========================
+   STATES
+========================= */
+
+.button:hover:not(:disabled):not(:active) {
+    transform: translateY(-1px); 
+    /* moves button slightly up → "lift" effect */
+}
+
+.button:active {
+    transform: translateY(1px);
+    /* moves down → pressed effect */
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    /* visible focus ring only for keyboard navigation */
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    /* prevents interaction */
+}
+
+
+/* =========================
+   COMPOUND VARIANTS
+========================= */
+
+.button--variant-primary.button--size-large:hover:not(:active) {
+    transform: translateY(-2px);
+    /* larger buttons lift more → feels heavier */
+}
+
+
+/* =========================
+   ICON + LABEL
+========================= */
+
+.icon {
+    width: 1em;
+    height: 1em;
+    /* scales icon relative to text size */
+
+    flex-shrink: 0;
+    /* prevents icon from shrinking in tight space */
+}
+
+.label {
+    display: inline-block;
+    /* ensures predictable layout inside flex */
+}
+
+
+/* =========================
+   ICON MODIFIERS
+========================= */
+
+.button--icon-only {
+    padding: var(--spacing-100);
+    /* square-ish button for icon-only */
+}
+
+.button--icon-only .label {
+    display: none;
+    /* defensive: hide label even if present */
+}
+
+.button--icon-right {
+    flex-direction: row-reverse;
+    /* flips icon + label order without changing HTML */
+}

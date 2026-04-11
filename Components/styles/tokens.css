@@ -1,0 +1,22 @@
+:root {
+  /* colors */
+  --color-primary: hsl(220, 90%, 56%);
+  --color-primary-hover: hsl(220, 90%, 46%);
+  --color-white: #fff;
+
+  --color-gray: hsl(0, 0%, 90%);
+  --color-black: #000;
+
+
+
+  /* spacing */
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+
+  /* radius */
+  --radius-medium: 8px;
+
+  /* typography */
+  --font-size-base: 16px;
+  --font-weight-bold: 600;
+}
