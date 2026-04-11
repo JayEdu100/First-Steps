@@ -12,6 +12,8 @@
   /* spacing */
   --spacing-100: 8px;
   --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
 
   /* radius */
   --radius-medium: 8px;
@@ -20,4 +22,61 @@
   --font-size-base: 16px;
   --font-size-small: 14px;
   --font-weight-bold: 600;
+
+  --line-height-base: 1.4;
+
+  /* constraints */
+  --container-width: 100%;
+
+  /* shadow */
+  --shadow-base: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  /* breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+
+}
+
+/* Responsiveness Mental Model
+
+TOKENS (global scale)
+- spacing
+- typography
+- rhythm
+- constraints
+
+COMPONENTS (local behavior)
+- layout direction
+- positioning
+- structure
+
+*/
+
+@media (min-width: 768px) {
+  :root {
+    /* spacing */
+    --spacing-100: 12px;
+    --spacing-200: 24px;
+    --spacing-300: 36px;
+    --spacing-400: 48px;
+
+    /* radius */
+    --radius-medium: 10px;
+
+    /* typography */
+    --font-size-base: 18px;
+    --font-size-small: 15px;
+    --font-weight-large: 24px;
+
+    --line-height-base: 1.6;
+
+    /* constraints */
+    --container-width: 600px;
+
+    /* shadow */
+    --shadow-base: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+    --color-gray: hsl(0, 0%, 50%);
+  }
 }

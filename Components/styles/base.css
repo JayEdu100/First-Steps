@@ -16,4 +16,6 @@ body {
     min-height: 100vh;
 
     gap: var(--spacing-200);
+
+    background-color: var(--color-gray);
 }

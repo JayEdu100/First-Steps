@@ -1,0 +1,70 @@
+/* reference tokens.css for variables */
+
+/*
+========================================
+FORM SYSTEM — MENTAL MODEL
+========================================
+
+STRUCTURE
+---------
+.form                → container
+.form__group         → single field group
+.form__actions       → buttons container
+
+COMPOSITION
+-----------
+.form
+ ├── .form__group
+ │     └── .input (component)
+ └── .form__actions
+       └── .button
+
+KEY PRINCIPLES
+--------------
+1. Form controls layout, not components
+2. Use flex + gap for spacing
+3. Groups isolate fields
+4. Actions aligned separately
+5. Consistency across inputs
+
+LAYOUT RULES
+------------
+Vertical spacing → gap
+Horizontal alignment → flex
+Buttons grouped in actions
+
+========================================
+*/
+
+/* Base */
+.form-card {
+    max-width: 400px;
+    width: 100%;
+    
+    background-color: var(--color-white);
+    padding: var(--spacing-200);
+    border-radius: var(--radius-medium);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+}
+
+.form__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-100);
+}
+
+
+
+
