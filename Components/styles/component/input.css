@@ -1,3 +1,5 @@
+/* reference tokens.css for variables */
+
 /*
 ========================================
 INPUT COMPONENT — MENTAL MODEL
@@ -156,7 +158,7 @@ scale(0.85)      → shrink label
     background: white;
     padding: 0 4px;
 
-    font-size: 14px;
+    font-size: var(--font-size-small);
     color: var(--color-gray);
 
     pointer-events: none;
