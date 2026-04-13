@@ -1,4 +1,44 @@
 /*
+Component = API + Structure + Behavior + Constraints
+
+/*
+========================================
+COMPONENT THINKING — CORE MODEL
+========================================
+
+A COMPONENT HAS:
+
+1. API (how it is used)
+   → classes / props
+   → .button--variant-primary
+
+2. STRUCTURE (internal parts)
+   → __ elements
+   → .input__field
+
+3. STATE (interaction)
+   → :hover, :focus, --error
+
+4. VARIANTS (options)
+   → size, type, layout
+
+5. CONSTRAINTS (rules)
+   → what is allowed / not allowed
+
+----------------------------------------
+
+GOOD COMPONENT:
+✔ predictable
+✔ reusable
+✔ scalable
+
+BAD COMPONENT:
+✘ too many exceptions
+✘ tightly coupled
+✘ hard to extend
+
+========================================
+
 ========================================
 BUTTON COMPONENT — MENTAL MODEL
 ========================================
@@ -46,6 +86,66 @@ ICON SYSTEM
 Icons scale with text using em units
 
 ========================================
+COMPONENT: Button
+
+----------------------------------------
+API (how it is used)
+----------------------------------------
+
+- variant: primary | secondary
+- size: small | large
+- icon-position: left | right | none
+- disabled: true | false
+
+
+----------------------------------------
+STRUCTURE (internal parts)
+----------------------------------------
+
+button (container)
+ ├── icon (optional)
+ └── label (optional)
+
+----------------------------------------
+STATES (interaction)
+----------------------------------------
+
+- hover → visual lift
+- active → pressed state
+- focus → outline for accessibility
+- disabled → no interaction
+
+----------------------------------------
+VARIANTS (visual differences)
+----------------------------------------
+
+- primary → colored background
+- secondary → neutral background
+- size → padding + font size
+
+----------------------------------------
+CONSTRAINTS (rules)
+----------------------------------------
+
+1. Must have at least:
+   - label OR icon
+
+2. icon-only:
+   - label must not be visible
+
+3. disabled:
+   - no hover or active effects
+
+4. icon-position:
+   - only affects layout, not content
+
+----------------------------------------
+NOTES
+----------------------------------------
+
+- Layout is handled by parent (form, container)
+- Button should size based on content by default
+- Variants should override variables, not styles directly
 */
 
 

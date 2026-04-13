@@ -1,0 +1,159 @@
+/*
+========================================
+CARD COMPONENT — MENTAL MODEL
+========================================
+
+STRUCTURE
+---------
+.card              → container
+.card__image       → media (image)
+.card__content     → content wrapper
+.card__title       → main heading
+.card__subtitle    → secondary text
+.card__text        → description
+.card__actions     → button container
+
+LAYOUT
+------
+Mobile → column
+Desktop → row
+
+KEY PRINCIPLES
+--------------
+1. Container controls layout (flex + gap)
+2. Content stays left-aligned for readability
+3. Media and content scale responsively
+4. Use tokens for spacing, typography, radius
+5. Interaction is subtle (hover lift)
+
+COMPOSITION
+-----------
+.card
+ ├── image
+ └── content
+      ├── text
+      └── actions
+
+========================================
+*/
+
+
+/* =========================
+   BASE
+========================= */
+
+.card {
+    /* Layout */
+    display: flex;
+    flex-direction: column; /* mobile default */
+    align-items: flex-start; /* better readability than center */
+
+    /* Spacing */
+    gap: var(--spacing-300);
+    padding: var(--spacing-300);
+
+    /* Size */
+    width: 100%;
+    max-width: 400px;
+
+    /* Appearance */
+    background-color: var(--color-white);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-base);
+
+    /* Interaction */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Hover interaction */
+.card:hover {
+    transform: translateY(-4px); 
+    /* lifts card slightly */
+    box-shadow: var(--shadow-strong);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.card__image {
+    width: 100%;
+    border-radius: var(--radius-medium);
+
+    object-fit: cover;
+    /* ensures image scales nicely without distortion */
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.card__title {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-base);
+    color: var(--color-black);
+}
+
+.card__subtitle {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular); /* less emphasis than title */
+    color: var(--color-gray);
+}
+
+.card__text {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-gray);
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.card__actions {
+    display: flex;
+    gap: var(--spacing-200);
+}
+
+
+/* =========================
+   RESPONSIVE (DESKTOP)
+========================= */
+
+@media (min-width: 768px) {
+
+    .card {
+        flex-direction: row;
+        /* switches layout to horizontal */
+
+        gap: var(--spacing-400);
+        max-width: var(--container-width);
+    }
+
+    .card__image {
+        width: 50%;
+        /* image takes half space */
+    }
+
+    .card__content {
+        flex: 1;
+        /* content fills remaining space */
+        justify-content: center;
+    }
+}

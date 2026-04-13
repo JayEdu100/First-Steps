@@ -1,6 +1,5 @@
-/* reference tokens.css for variables */
+/* reference tokens.css for variables 
 
-/*
 ========================================
 INPUT COMPONENT — MENTAL MODEL
 ========================================
@@ -57,6 +56,12 @@ translateY(-50%) → move label upward
 scale(0.85)      → shrink label
 
 ========================================
+API
+ variants: default | floating
+ label: "Email"
+ placeholder: "Enter your {label}"
+ error: "Invalid {label}"
+ disabled: true | false
 */
 
 
