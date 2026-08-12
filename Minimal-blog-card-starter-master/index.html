@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+    <title>devChallenges.io | Minimal Blog Card</title>
+  </head>
+  <body class="h-screen grid grid-cols-[1fr_auto_1fr] grid-rows-[1fr_auto_1fr]">
+
+    <!-- Card Container -->
+    <main class="col-start-2 row-start-2 max-w-92 p-4 m-4 flex flex-col gap-4 rounded-xl bg-[#FAFAF9]">
+        <!-- Card Header -->
+        <div class="flex flex-col items-start gap-4">
+          <img src="./resources/Cactus.jpg" alt="a cactus pot."/>
+          <span class="bg-[#F2EAFD] text-[#7C19EE] 
+            text-xs font-semibold 
+            py-1 px-4 
+            rounded-full">Design</span>
+        </div>
+
+        <!-- Card Content -->
+        <div class="flex flex-col gap-1.5">
+          <h1 class="text-xl font-semibold text-[#20293A]">Embracing Minimalism</h1>
+          <p>From minimalist sculptures to minimalist paintings, this blog will inspire you to appreciate the beauty that lies in simplicity.</p>
+        </div>
+        <!-- Card Footer -->
+        <div class="border-t-2 border-[#E5EAF0] pt-4">
+          <p>Annie Spratt</p>
+        </div>
+      </main>
+    <!-- Page Footer -->
+    <footer class="author-info col-start-2 row-start-3 self-end pb-4">
+      Coded by <a href="#">Jay</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </footer>
+  </body>
+</html>

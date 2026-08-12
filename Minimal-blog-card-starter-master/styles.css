@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.author-info {
+font-size: 14px;
+text-align: center;
+margin-top: 16px;
+color: rgb(55, 65, 81);
+}
+
+.author-info a {
+text-decoration: none;
+}
+
+p {
+    color: #394150;
+    padding-bottom: 0.25em;
+}
+
+main {
+    box-shadow: 5px 5px 20px #F2EAFD
+}
