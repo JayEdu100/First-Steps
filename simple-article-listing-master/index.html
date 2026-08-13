@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200..900&display=swap" rel="stylesheet">
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="./styles.css" rel="stylesheet"></link>
+  <title>Simple Article Listing | devChallenges.io</title>
+  </head>
+  <body class="
+    h-screen
+    bg-[#F8FAFC]
+    font-['Poppins']
+    grid grid-cols-[1fr_minmax(0,500px)_1fr] grid-rows-[1fr_auto_1fr] gap-4">
+
+    <header class="
+      row-start-1 col-start-2 place-self-center
+      text-center
+      py-4
+      ">
+      <h1 class="
+      text-4xl font-semibold mb-6
+      ">
+        We release interesting articles about technology
+      </h1>
+      <span class = "text-[#D9D9D9] tracking-wider"> ////////////////// </span>
+    </header>
+    
+    <main class="
+    row-start-2 col-start-2 self-start flex flex-col gap-8
+    ">
+      <article>
+        <img src="./resources/photo_1.png" alt=""/>
+        
+        <h2 > 
+          Unlocking the Power of Cloud Computing:
+          A Guide to Scalable Solutions
+        </h2>
+        <span>November 12, 2024</span>
+        
+      </article>
+      <article>
+        <img src="./resources/photo_3.png" alt=""/>
+        
+        <h2>
+          The Future of AI
+          How Machine Learning is Revolutionizing Industries
+        </h2>
+        
+        <span>November 12, 2024</span>
+      
+      </article>
+      <article>
+        <img src="./resources/photo_2.png" alt=""/>
+        
+          <h2>
+            The Impact of 5G on Business
+            How Faster Networks are Transforming the Way We Work
+          </h2>
+          <span>November 12, 2024</span>
+        
+      </article>
+    </main>
+    
+    <footer class="
+    row-start-3 col-start-2 self-end
+    mb-4
+    author-info">
+      Coded by <a href="#">Jay</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </footer>
+  </body>
+</html>
