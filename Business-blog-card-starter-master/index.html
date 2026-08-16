@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Business Blog Card | devChallenges.io</title>
+  </head>
+  <body class="min-h-screen bg-[#F2F5F9]
+    font-['Lato', sans-serif]
+    flex flex-col justify-between">
+    <h1 class="sr-only">Business Blog Card | devChallenges.io</h1>
+    <h2 class="sr-only">Business Blog Card | devChallenges.io</h2>
+
+    <main class="grow
+      flex justify-center items-center
+      ">
+
+      <!-- Card -->
+      <div class="max-w-md bg-white
+      rounded-xl overflow-hidden
+      flex flex-col justify-center
+      ">
+        <!-- Image and Overlay -->
+        <div class="relative">
+          <img src="./resources/hero-image-1.jpg" alt=""
+            class="w-full"/>
+          <img src="./resources/white-overlay.svg" alt=""
+            class="absolute -bottom-1 w-full"/>
+        </div>
+  
+        <!-- Card Contents -->
+        <div class="px-8 pt-4 pb-6
+          flex flex-col gap-4 w-11/12">
+          <h3 class="text-2xl font-semibold
+            font-['Poppins', sans-serif]
+            ">Perfect solution for small business</h3>
+          <p class="text-[#4A5567] font-light">
+            Small businesses need to generate leads to grow. You can use tools like Ringy.
+          </p>
+        </div>
+  
+        <!-- Card Footer -->
+        <div class="border-t border-[#F2F5F9] px-8 py-6
+        flex gap-4 items-center">
+          <img src="./resources/avatar-image-business-card-1.png" alt=""
+            class="rounded-full outline-4 outline-[#F2F5F9] -outline-offset-4">
+          <div>
+            <p class="font-semibold">Amy Burgess</p>
+            <p class="text-[#4A5567] font-light">Customer Manger, Solution Oy</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="author-info p-8">
+      Coded by <a href="#">Jay</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </footer>
+    
+  </body>
+</html>

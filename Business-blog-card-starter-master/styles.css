@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+.author-info {
+font-size: 14px;
+text-align: center;
+margin-top: 16px;
+color: rgb(55, 65, 81);
+}
+
+.author-info a {
+color: rgb(55, 65, 81);
+text-decoration: underline;
+}
